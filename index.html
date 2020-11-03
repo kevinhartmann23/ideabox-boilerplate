@@ -12,7 +12,7 @@
     <h1>IdeaBox</h1>
     <div id="filter-section">
       <p>Filter Starred Ideas</p>
-      <button class="filter-button">Show Starred Ideas</button>
+      <button class="filter-button" alt="Toggle displayed ideas">Show Starred Ideas</button>
     </div>
   </section>
   <section class="form-box">
@@ -25,32 +25,18 @@
         <label for="body" class="label-text">Body</label>
         <input type="text" id="body">
       </div>
-      <button id="save-button" disabled>Save</button>
+      <button id="save-button" alt="Save idea" disabled>Save</button>
     </form>
-    <form class="search-form">
-      <button id="search-button"><img src="svg-files/search.svg" /></button>
+    <section class="search-box">
+      <div class="image-container">
+        <img class="search-image" src="svg-files/search.svg" alt="seach image, not a button" />
+      </div>
       <input type="text" placeholder="Search Ideas" class="search-bar">
-    </form>
+    </section>
   </section>
   <section class="card-box">
     <div class="card-display">
-      <!-- <article>
-        <div class="card-button-bar">
-          <button class="favorite-button"><img src="svg-files/star.svg" /></button>
-          <button class="delete-button"><img src="svg-files/delete.svg" /></button>
-        </div>
-        <div class="card-text">
-          <h2>Idea title</h2>
-          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-        </div>
-        <div class="comment-button-bar">
-          <button class="comment-button"><img src="svg-files/comment.svg" /></button>
-          <label for="comment-input">Comment</label>
-          <form class="comment-form hidden">
-            <input type="text" id="comment-input">
-          </form>
-        </div>
-      </article> -->
+
     </div>
   </section>
   <script src="./src/idea.js"></script>

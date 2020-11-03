@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  height: 100vh;
   display: grid;
   grid-template-columns: 2fr 3fr 3fr;
   grid-template-rows: 2fr 3fr;
@@ -27,11 +28,14 @@ body {
 h1 {
   color: #ffffff;
   margin-left: 10px;
+  font-size: 20px;
 }
 
 #filter-section {
   display: flex;
+  height: 10vh;
   padding: 10px;
+  padding-bottom: 20px;
   flex-direction: column;
   justify-content: space-evenly;
   border-top: 2px solid #353567;
@@ -52,6 +56,10 @@ h1 {
   height: 50px;
   width: 100%;
   font-size: 1.1em;
+}
+
+.filter-button:hover {
+  background-color: #7879d3;
 }
 
 /* Form Box Styles */
@@ -81,6 +89,7 @@ h1 {
 #title, #body {
   border: 2px solid #7274B5;
   border-radius: 2px;
+  margin-bottom: 10px;
 }
 
 #title {
@@ -107,6 +116,7 @@ h1 {
   background-color: #353567;
   color: #ffffff;
   font-size: 1.1em;
+  margin-bottom: 5px;
 }
 
 #save-button:disabled {
@@ -115,30 +125,36 @@ h1 {
 }
 
 /* Search Box Styles */
-.search-form {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  justify-content: flex-start;
+.search-box {
+  display: flex;
+  height: 50px ;
   width: 50%;
   border: 1px solid #7274B5;
   border-radius: 2px;
 }
 
-#search-button {
+.image-container {
   grid-column: 1 / 2;
-  background: none;
-  border: 2px solid #7274B5;
-  background-color: #353567;
-  padding: 10px;
-  /* changes size of actual icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px ;
   width: 50px;
+  background: none;
+  background-color: #353567;
+}
+
+.search-image {
+  height: 30px ;
+  width: 30px;
+  background: none;
+  background-color: #353567;
 }
 
 .search-bar {
   grid-column: 2 / -1;
-  height: 50px;
-  font-size: 1em;
-  margin-bottom: 0px;
+  height: auto;
+  width: 100%;
 }
 
 /* Card Box Styles */
@@ -147,15 +163,16 @@ h1 {
   grid-area: cardbox;
 }
 
-.card-display {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 10px;
+.card {
+  min-height: 300px;
+  max-height: 300px;
 }
 
-article {
-  border: 1px solid #1f1f3d;
+.card-display {
+  display: grid;
+  grid-template-columns: repeat( 3 , minmax(200px, 1fr) );
+  grid-gap: 10px;
+  padding: 10px;
 }
 
 .card-button-bar {
@@ -191,13 +208,22 @@ article {
 }
 
 .card-text {
+  height: 200px;
   background-color: #ffffff;
   padding: 10px;
   color: #1F1F3D;
 }
 
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .card-text p {
-  font-size: 1.1em;
+  height: 130px;
+  font-size: 1rem;
+  overflow-y: auto;
+  overflow-wrap: break-word;
 }
 
 .comment-button-bar {
