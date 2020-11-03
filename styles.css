@@ -210,6 +210,11 @@ h1 {
   color: #1F1F3D;
 }
 
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .card-text p {
   height: 130px;
   font-size: 1rem;
