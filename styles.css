@@ -115,30 +115,28 @@ h1 {
 }
 
 /* Search Box Styles */
-.search-form {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  justify-content: flex-start;
+.search-box {
+  display: flex;
+  height: 50px ;
   width: 50%;
   border: 1px solid #7274B5;
   border-radius: 2px;
 }
 
-#search-button {
+.search-image {
+  height: 50px ;
+  width: 50px;
   grid-column: 1 / 2;
+  background-size: 50px 50px;
   background: none;
   border: 2px solid #7274B5;
   background-color: #353567;
-  padding: 10px;
-  /* changes size of actual icon */
-  width: 50px;
 }
 
 .search-bar {
   grid-column: 2 / -1;
   height: 50px;
-  font-size: 1em;
-  margin-bottom: 0px;
+  width: 100%;
 }
 
 /* Card Box Styles */
@@ -147,15 +145,16 @@ h1 {
   grid-area: cardbox;
 }
 
-.card-display {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 10px;
+.card {
+  min-height: 300px;
+  max-height: 300px;
 }
 
-article {
-  border: 1px solid #1f1f3d;
+.card-display {
+  display: grid;
+  grid-template-columns: repeat( 3 , minmax(200px, 1fr) );
+  grid-gap: 10px;
+  padding: 10px;
 }
 
 .card-button-bar {
@@ -191,13 +190,17 @@ article {
 }
 
 .card-text {
+  height: 200px;
   background-color: #ffffff;
   padding: 10px;
   color: #1F1F3D;
 }
 
 .card-text p {
-  font-size: 1.1em;
+  height: 120px;
+  font-size: 0.9rem;
+  overflow-y: auto;
+  overflow-wrap: break-word;
 }
 
 .comment-button-bar {
