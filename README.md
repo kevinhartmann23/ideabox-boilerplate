@@ -8,6 +8,7 @@
 **Other contributors:**
 - Adam Vinueza (mentor)
 - Melena Suliteanu (mentor)
+- Jeff Duke (mentor)
 
 ## Technologies Used
 - Javascript
@@ -41,7 +42,7 @@ Our first task was to build out the following comp using HTML and CSS:
 Next, we set up our files and data model to allow JSON and `localStorage` to persist data on page reload, and JavaScript to manage client-side interactions.
 
 We created 2 JavaScript files:
-1. An `idea.js` file that contains an `Idea` class, with properties of `title`, `body`, `star`, and a unique `id` in the constructor. It also included a method of `updateIdea` that allowed us to update an idea's starred state. **_Note: the project spec sheet required 2 more methods of `saveToStorage` and `deleteFromStorage` to be included in the Idea class. We set up our `localStorage` to have only one key with a value of an array of our idea card objects instead of key-value pairs for each individual idea card. Because of this, our local storage methods actually had nothing to do with our `Idea` class file, so we chose to include our `localStorage`-related functions in our `main.js` file (listed below) instead._**
+1. An `idea.js` file that contains an `Idea` class, with properties of `title`, `body`, `star`, and a unique `id` in the constructor. It also included a method of `updateIdea` that allowed us to update an idea's starred state. **_Note: the project spec sheet required 2 more methods of `saveToStorage` and `deleteFromStorage` to be included in the `Idea` class. We set up our `localStorage` to have only one key with a value of an array of our idea card objects instead of key-value pairs for each individual idea card. We chose to set it up this way because we wanted our `localStorage` to match our source of truth, which is our global variable of `list` array declared in `main.js`. Because of this, our local storage methods actually had nothing to do with our `Idea` class file, so we included our `localStorage`-related functions in our `main.js` file (listed below) instead._**
 2. A `main.js` file that contains all DOM related JavaScript.
 
 ### Iteration 2 - Adding Ideas
