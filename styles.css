@@ -58,6 +58,10 @@ h1 {
   font-size: 1.1em;
 }
 
+.filter-button:hover {
+  background-color: #7879d3;
+}
+
 /* Form Box Styles */
 .form-box {
   background-color: #a9aad2;
