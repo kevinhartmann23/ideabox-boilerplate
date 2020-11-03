@@ -63,12 +63,12 @@ function refreshCard() {
     <article class="card" id="${list[i].id}">
       <div class="card-button-bar">
         <div class="favorite-box">
-          <button class="favorite-button white-star" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
-          <button class="favorite-button red-star hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
+          <button class="favorite-button white-star" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg" alt="Favorite button"/></button>
+          <button class="favorite-button red-star hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg" alt="Favorite button"/></button>
         </div>
         <div class="delete-box">
-          <button class="delete-button delete-red" id="${list[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
-          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
+          <button class="delete-button delete-red" id="${list[i].id}"><img class="delete-img" src="svg-files/delete-active.svg" alt="Delete button"/></button>
+          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"  alt="Delete button"/></button>
         </div>
       </div>
       <div class="card-text">
