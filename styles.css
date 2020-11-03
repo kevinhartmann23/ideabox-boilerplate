@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  height: 100vh;
   display: grid;
   grid-template-columns: 2fr 3fr 3fr;
   grid-template-rows: 2fr 3fr;
@@ -27,11 +28,14 @@ body {
 h1 {
   color: #ffffff;
   margin-left: 10px;
+  font-size: 20px;
 }
 
 #filter-section {
   display: flex;
+  height: 10vh;
   padding: 10px;
+  padding-bottom: 20px;
   flex-direction: column;
   justify-content: space-evenly;
   border-top: 2px solid #353567;
@@ -123,11 +127,20 @@ h1 {
   border-radius: 2px;
 }
 
-.search-image {
+.image-container {
+  grid-column: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px ;
   width: 50px;
-  grid-column: 1 / 2;
-  background-size: 50px 50px;
+  background: none;
+  background-color: #353567;
+}
+
+.search-image {
+  height: 30px ;
+  width: 30px;
   background: none;
   border: 2px solid #7274B5;
   background-color: #353567;
@@ -135,7 +148,7 @@ h1 {
 
 .search-bar {
   grid-column: 2 / -1;
-  height: 50px;
+  height: auto;
   width: 100%;
 }
 
@@ -197,8 +210,8 @@ h1 {
 }
 
 .card-text p {
-  height: 120px;
-  font-size: 0.9rem;
+  height: 130px;
+  font-size: 1rem;
   overflow-y: auto;
   overflow-wrap: break-word;
 }
