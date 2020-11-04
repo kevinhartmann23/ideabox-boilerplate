@@ -5,7 +5,7 @@ var inputBody = document.querySelector("#idea-body");
 var inputButton = document.querySelector(".save-button");
 var cardDisplay = document.querySelector(".card-display");
 var showFavoritesButton = document.querySelector(".filter-button");
-var searchBar = document.querySelector(".search-bar");
+var searchBar = document.querySelector("#search-bar");
 
 
 // Global Variables 👇

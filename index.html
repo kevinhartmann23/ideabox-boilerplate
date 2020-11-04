@@ -18,11 +18,11 @@
   <section class="form-box">
     <form class="idea-form">
       <div class="input-box">
-        <label for="title" class="label-text">Title</label>
+        <label for="idea-title" class="label-text">Title</label>
         <textarea id="idea-title" name="title" placeholder="Give your idea a title..." alt="Give your idea a title"></textarea>
       </div>
       <div class="input-box">
-        <label for="body" class="label-text">Body</label>
+        <label for="idea-body" class="label-text">Body</label>
         <textarea id="idea-body" name="body" placeholder="Explain your thoughts..." alt="Explain your thoughts"></textarea>
       </div>
       <button class="save-button" alt="Save idea" disabled>Save</button>
@@ -31,7 +31,8 @@
       <div class="image-container">
         <img class="search-image" src="svg-files/search.svg" alt="seach image icon" />
       </div>
-      <input type="text" placeholder="Search Ideas" alt="Search Ideas" class="search-bar">
+      <label for="search-bar"></label>
+      <input id="search-bar" type="text" placeholder="Search Ideas" alt="Search Ideas">
     </section>
   </section>
   <section class="card-box">
