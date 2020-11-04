@@ -133,7 +133,7 @@ h1 {
 /* Search Box Styles */
 .search-box {
   display: flex;
-  height: 50px ;
+  height: 50px;
   width: 50%;
   border: 1px solid #7274B5;
   border-radius: 2px;
@@ -144,14 +144,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px ;
+  height: 50px;
   width: 50px;
   background: none;
   background-color: #353567;
 }
 
 .search-image {
-  height: 30px ;
+  height: 30px;
   width: 30px;
   background: none;
   background-color: #353567;
@@ -177,7 +177,7 @@ h1 {
 
 .card-display {
   display: grid;
-  grid-template-columns: repeat( 3 , minmax(200px, 1fr) );
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   grid-gap: 10px;
   padding: 10px;
 }
