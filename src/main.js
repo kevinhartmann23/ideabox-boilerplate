@@ -188,7 +188,7 @@ function toggleFavorites() {
 };
 
 function searchValues(idea) {
-  var currentString = event.target.value.toLowerCase();
+  var currentString = searchBar.value.toLowerCase();
   return (
     idea.title.toLowerCase().includes(currentString) ||
     idea.body.toLowerCase().includes(currentString)
