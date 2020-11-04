@@ -23,6 +23,7 @@ body {
   background-color: #1f1f3d;
   grid-area: sidebox;
   font-weight: bold;
+  min-width: 200px;
 }
 
 h1 {
@@ -31,7 +32,7 @@ h1 {
   font-size: 20px;
 }
 
-#filter-section {
+.filter-section {
   display: flex;
   height: 10vh;
   padding: 10px;
@@ -56,6 +57,7 @@ h1 {
   height: 50px;
   width: 100%;
   font-size: 1.1em;
+  padding: 10px;
 }
 
 .filter-button:hover {
@@ -79,7 +81,7 @@ h1 {
   width: 50%;
 }
 
-#input-box {
+.input-box {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -113,7 +115,7 @@ h1 {
   margin-bottom: 5px;
 }
 
-#save-button {
+.save-button {
   height: 50px;
   width: 100%;
   padding: 2px;
@@ -125,7 +127,7 @@ h1 {
   margin-bottom: 5px;
 }
 
-#save-button:disabled {
+.save-button:disabled {
   background-color: #5356a4;
   cursor: help;
 }
@@ -133,7 +135,7 @@ h1 {
 /* Search Box Styles */
 .search-box {
   display: flex;
-  height: 50px ;
+  height: 50px;
   width: 50%;
   border: 1px solid #7274B5;
   border-radius: 2px;
@@ -144,14 +146,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px ;
+  height: 50px;
   width: 50px;
   background: none;
   background-color: #353567;
 }
 
 .search-image {
-  height: 30px ;
+  height: 30px;
   width: 30px;
   background: none;
   background-color: #353567;
@@ -177,7 +179,7 @@ h1 {
 
 .card-display {
   display: grid;
-  grid-template-columns: repeat( 3 , minmax(200px, 1fr) );
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   grid-gap: 10px;
   padding: 10px;
 }

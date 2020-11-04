@@ -1,18 +1,19 @@
-
-//Global Query Selectors...
+// Global Query Selectors 👇
 var ideaForm = document.querySelector('.idea-form');
 var inputTitle = document.querySelector("#title");
 var inputBody = document.querySelector("#body");
-var inputButton = document.querySelector("#save-button");
+var inputButton = document.querySelector(".save-button");
 var cardDisplay = document.querySelector(".card-display");
 var showFavoritesButton = document.querySelector(".filter-button");
 var searchBar = document.querySelector(".search-bar");
 
-//Global Variables...
+
+// Global Variables 👇
 var list = [];
 var filteredCards = [];
 
-//Event Listeners...
+
+// Event Listeners 👇
 window.addEventListener("load", retrieveFromLocalStorage);
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
@@ -20,14 +21,15 @@ inputBody.addEventListener("keyup", checkInputs);
 showFavoritesButton.addEventListener("click", toggleFavorites);
 searchBar.addEventListener("keyup", searchCards);
 
-//Event Listeners With Anonymous Functions...
+
+// Event Listeners With Anonymous Functions 👇
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
       if (parseInt(event.target.closest("article").id) === list[i].id) {
         addToFavorites(list[i]);
         changeStarColor(list[i]);
-      }
+      };
     };
   };
 
@@ -36,18 +38,19 @@ cardDisplay.addEventListener("click", function(event) {
       if (parseInt(event.target.closest("article").id) === list[i].id) {
         deleteIdea(list[i].id);
         event.target.closest("article").remove();
-      }
-    }
+      };
+    };
   };
 });
 
-//Functions and Event Handelers...
+
+// Functions and Event Handlers 👇
 function checkInputs() {
-  if (inputTitle.value !== "" && inputBody.value !== "") {
+  if ((inputTitle.value !== "") && (inputBody.value !== "")) {
     inputButton.disabled = false;
   } else {
     inputButton.disabled = true;
-  }
+  };
 };
 
 function addToList(title, body) {
@@ -73,12 +76,12 @@ function refreshCard(array) {
     <article class="card" id="${array[i].id}">
       <div class="card-button-bar">
         <div class="favorite-box">
-          <button class="favorite-button white-star" id="${array[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
-          <button class="favorite-button red-star hidden" id="${array[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
+          <button class="favorite-button white-star" id="${array[i].id}"><img src="svg-files/star.svg" alt="white star"/></button>
+          <button class="favorite-button red-star hidden" id="${array[i].id}"><img src="svg-files/star-active.svg" alt="red star"/></button>
         </div>
         <div class="delete-box">
-          <button class="delete-button delete-red" id="${array[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
-          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
+          <button class="delete-button delete-red" id="${array[i].id}"><img src="svg-files/delete-active.svg" alt="delete button hover red"/></button>
+          <button class="delete-button delete-white"><img src="svg-files/delete.svg" alt="delete button"/></button>
         </div>
       </div>
       <div class="card-text">
@@ -112,7 +115,7 @@ function changeStarColor(favoritedIdea) {
   for (var i = 0; i < favoriteButton.length; i++) {
     if (favoritedIdea.id === parseInt(favoriteButton[i].id)) {
       favoriteButton[i].classList.toggle("hidden");
-    }
+    };
   };
 };
 
@@ -121,7 +124,7 @@ function deleteIdea(deleteCard) {
   for (var i = 0; i < deleteButtonRed.length; i++) {
     if (deleteCard === parseInt(deleteButtonRed[i].id)) {
       list.splice(i, 1);
-    }
+    };
   };
   sendToLocalStorage();
 };
@@ -131,23 +134,27 @@ function sendToLocalStorage() {
   localStorage.setItem("ideaCards", stringifiedObject);
 };
 
+function createParsedObject() {
+  var retrievedObject = localStorage.getItem("ideaCards");
+  var parsedObject = JSON.parse(retrievedObject);
+  for (var i = 0; i < parsedObject.length; i++) {
+    var newObject = new Idea(parsedObject[i].title, parsedObject[i].body, parsedObject[i].star, parsedObject[i].id);
+    list.push(newObject);
+  };
+};
+
 function retrieveFromLocalStorage() {
   if (localStorage.length < 1) {
     return;
   };
-  var retrievedObject = localStorage.getItem("ideaCards");
-  var parsedObject = JSON.parse(retrievedObject);
-  for (var i = 0; i < parsedObject.length; i++) {
-    var newObject = new Idea(
-      parsedObject[i].title,
-      parsedObject[i].body,
-      parsedObject[i].star,
-      parsedObject[i].id
-      );
-    list.push(newObject);
-  };
+  createParsedObject();
   refreshCard(list);
   loadStars(list);
+};
+
+function showHide(show, hide) {
+  show.classList.remove("hidden");
+  hide.classList.add("hidden");
 };
 
 function loadStars(array) {
@@ -155,23 +162,23 @@ function loadStars(array) {
   var whiteStar = document.querySelectorAll('.white-star');
   for (var i = 0; i < array.length; i++) {
     if (array[i].star) {
-      whiteStar[i].classList.add("hidden");
-      redStar[i].classList.remove("hidden");
-    } else {
-      whiteStar[i].classList.remove("hidden");
-      redStar[i].classList.add("hidden");
-    }
+      showHide(redStar[i], whiteStar[i]);
+    };
+  };
+};
+
+function checkForStars() {
+  var card = document.querySelectorAll('.card');
+  for (var i = 0; i < list.length; i++) {
+    if (!list[i].star) {
+      card[i].classList.add("hidden");
+    };
   };
 };
 
 function toggleFavorites() {
-  var card = document.querySelectorAll('.card');
   if (showFavoritesButton.innerText === 'Show Starred Ideas') {
-    for (var i = 0; i < list.length; i++) {
-      if (!list[i].star) {
-        card[i].classList.add("hidden");
-      }
-    }
+    checkForStars();
     showFavoritesButton.innerText = 'Show All Ideas';
   } else {
     showFavoritesButton.innerText = 'Show Starred Ideas';
@@ -181,7 +188,7 @@ function toggleFavorites() {
 };
 
 function searchValues(idea) {
-  var currentString = event.target.value.toLowerCase();
+  var currentString = searchBar.value.toLowerCase();
   return (
     idea.title.toLowerCase().includes(currentString) ||
     idea.body.toLowerCase().includes(currentString)
