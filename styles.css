@@ -156,7 +156,7 @@ h1 {
   background-color: #353567;
 }
 
-.search-bar {
+#search-bar {
   grid-column: 2 / -1;
   height: auto;
   width: 100%;
