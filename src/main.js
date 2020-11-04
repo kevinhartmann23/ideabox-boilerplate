@@ -2,7 +2,7 @@
 var ideaForm = document.querySelector('.idea-form');
 var inputTitle = document.querySelector("#title");
 var inputBody = document.querySelector("#body");
-var inputButton = document.querySelector("#save-button");
+var inputButton = document.querySelector(".save-button");
 var cardDisplay = document.querySelector(".card-display");
 var showFavoritesButton = document.querySelector(".filter-button");
 var searchBar = document.querySelector(".search-bar");
@@ -50,7 +50,7 @@ function checkInputs() {
     inputButton.disabled = false;
   } else {
     inputButton.disabled = true;
-  }
+  };
 };
 
 function addToList(title, body) {
@@ -76,12 +76,12 @@ function refreshCard(array) {
     <article class="card" id="${array[i].id}">
       <div class="card-button-bar">
         <div class="favorite-box">
-          <button class="favorite-button white-star" id="${array[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
-          <button class="favorite-button red-star hidden" id="${array[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
+          <button class="favorite-button white-star" id="${array[i].id}"><img src="svg-files/star.svg" alt="white star"/></button>
+          <button class="favorite-button red-star hidden" id="${array[i].id}"><img src="svg-files/star-active.svg" alt="red star"/></button>
         </div>
         <div class="delete-box">
-          <button class="delete-button delete-red" id="${array[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
-          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
+          <button class="delete-button delete-red" id="${array[i].id}"><img src="svg-files/delete-active.svg" alt="delete button hover red"/></button>
+          <button class="delete-button delete-white"><img src="svg-files/delete.svg" alt="delete button"/></button>
         </div>
       </div>
       <div class="card-text">

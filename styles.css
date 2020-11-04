@@ -23,6 +23,7 @@ body {
   background-color: #1f1f3d;
   grid-area: sidebox;
   font-weight: bold;
+  min-width: 200px;
 }
 
 h1 {
@@ -31,7 +32,7 @@ h1 {
   font-size: 20px;
 }
 
-#filter-section {
+.filter-section {
   display: flex;
   height: 10vh;
   padding: 10px;
@@ -56,6 +57,7 @@ h1 {
   height: 50px;
   width: 100%;
   font-size: 1.1em;
+  padding: 10px;
 }
 
 .filter-button:hover {
@@ -79,7 +81,7 @@ h1 {
   width: 50%;
 }
 
-#input-box {
+.input-box {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -113,7 +115,7 @@ h1 {
   margin-bottom: 5px;
 }
 
-#save-button {
+.save-button {
   height: 50px;
   width: 100%;
   padding: 2px;
@@ -125,7 +127,7 @@ h1 {
   margin-bottom: 5px;
 }
 
-#save-button:disabled {
+.save-button:disabled {
   background-color: #5356a4;
   cursor: help;
 }
