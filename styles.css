@@ -163,6 +163,12 @@ h1 {
   font-family: inherit;
 }
 
+.search-label {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
 /* Card Box Styles */
 .card-box {
   background-color: #eaeaf4;
