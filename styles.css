@@ -88,24 +88,21 @@ h1 {
   margin-bottom: 10px;
 }
 
-#title, #body {
+#idea-title, #idea-body {
   border: 2px solid #7274B5;
   border-radius: 2px;
   margin-bottom: 10px;
+  box-sizing: inherit;
+  resize: none;
+  font-family: inherit;
 }
 
-#title {
+#idea-title {
   height: 50px;
-  box-sizing: inherit;
-  resize: none;
-  font-family: inherit;
 }
 
-#body {
+#idea-body {
   height: 100px;
-  box-sizing: inherit;
-  resize: none;
-  font-family: inherit;
 }
 
 .label-text {
