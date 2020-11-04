@@ -94,10 +94,16 @@ h1 {
 
 #title {
   height: 50px;
+  box-sizing: inherit;
+  resize: none;
+  font-family: inherit;
 }
 
 #body {
   height: 100px;
+  box-sizing: inherit;
+  resize: none;
+  font-family: inherit;
 }
 
 .label-text {
@@ -155,6 +161,7 @@ h1 {
   grid-column: 2 / -1;
   height: auto;
   width: 100%;
+  font-family: inherit;
 }
 
 /* Card Box Styles */
