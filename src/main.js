@@ -20,29 +20,10 @@ inputTitle.addEventListener("keyup", toggleSaveButton);
 inputBody.addEventListener("keyup", toggleSaveButton);
 showFavoritesButton.addEventListener("click", toggleFavorites);
 searchBar.addEventListener("keyup", searchCards);
-cardDisplay.addEventListener("click", function(event) {
-  if (event.target.closest(".favorite-button")) {
-    for (var i = 0; i < ideaList.length; i++) {
-      if (parseInt(event.target.closest("article").id) === ideaList[i].id) {
-        addToFavorites(ideaList[i]);
-        changeStarColor(ideaList[i]);
-      };
-    };
-  };
-
-  if (event.target.closest(".delete-red")) {
-    for (var i = 0; i < ideaList.length; i++) {
-      if (parseInt(event.target.closest("article").id) === ideaList[i].id) {
-        ideaList.splice(i, 1);
-        event.target.closest("article").remove();
-      };
-    };
-    saveIdeaList();
-  };
-});
-
+cardDisplay.addEventListener("click", favoriteOrDelete);
 
 // Event Functions and Event Handlers 👇
+
 function toggleSaveButton() {
   if ((inputTitle.value !== "") && (inputBody.value !== "")) {
     inputButton.disabled = false;
@@ -114,6 +95,35 @@ function changeStarColor(favoritedIdea) {
     if (favoritedIdea.id === parseInt(favoriteButton[i].id)) {
       favoriteButton[i].classList.toggle("hidden");
     };
+  };
+};
+
+function favoriteOrDelete(event) {
+  favoriteThisIdea(event);
+  deleteThisIdea(event);
+}
+
+function favoriteThisIdea (event) {
+  if (event.target.closest(".favorite-button")) {
+    for (var i = 0; i < ideaList.length; i++) {
+      if (parseInt(event.target.closest("article").id) === ideaList[i].id) {
+        addToFavorites(ideaList[i]);
+        changeStarColor(ideaList[i]);
+      };
+    };
+    saveIdeaList();
+  };
+}
+
+function deleteThisIdea (event) {
+  if (event.target.closest(".delete-red")) {
+    for (var i = 0; i < ideaList.length; i++) {
+      if (parseInt(event.target.closest("article").id) === ideaList[i].id) {
+        ideaList.splice(i, 1);
+        event.target.closest("article").remove();
+      };
+    };
+    saveIdeaList();
   };
 };
 
