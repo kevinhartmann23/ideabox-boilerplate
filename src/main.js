@@ -23,7 +23,6 @@ searchBar.addEventListener("keyup", searchCards);
 cardDisplay.addEventListener("click", favoriteOrDelete);
 
 // Event Functions and Event Handlers 👇
-
 function toggleSaveButton() {
   if ((inputTitle.value !== "") && (inputBody.value !== "")) {
     inputButton.disabled = false;
@@ -103,7 +102,7 @@ function favoriteOrDelete(event) {
   deleteThisIdea(event);
 }
 
-function favoriteThisIdea (event) {
+function favoriteThisIdea(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < ideaList.length; i++) {
       if (parseInt(event.target.closest("article").id) === ideaList[i].id) {
@@ -115,7 +114,7 @@ function favoriteThisIdea (event) {
   };
 }
 
-function deleteThisIdea (event) {
+function deleteThisIdea(event) {
   if (event.target.closest(".delete-red")) {
     for (var i = 0; i < ideaList.length; i++) {
       if (parseInt(event.target.closest("article").id) === ideaList[i].id) {
